@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-sm">
+		<h1>Add a new stamp</h1>
+
+		<form action="submitstamp" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="stamp_image">Add stamp image</label>
+				<input type="file" class="form-control-file" id="stamp_image" name="stamp_image">
+			</div>
+			<div class="form-group">
+				<label for="stamp_name">Stamp name</label>
+				<input type="text" class="form-control" id="stamp_name" name="stamp_name">
+			</div>
+			<div class="form-group">
+				<select name="album">
+					<option value="cuba">Cuba</option>
+					<option value="francia">Francia</option>
+					<option value="alphi">Alphi</option>
+					
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="year">Year</label>
+				<input type="number" class="form-control" id="year" name="year">
+			</div>
+			<div class="form-group">
+				<label for="description">Description</label>
+				<textarea class="form-control" id="description" rows="3" name="description"></textarea>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Size</span>
+					</div>
+					<input type="number" step="0.01" aria-label="width" class="form-control" placeholder="width" name="width"> &nbsp; X &nbsp; 
+					<input type="number" step="0.01" aria-label="height" class="form-control" placeholder="heigth" name="height"> &nbsp; mm
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+<style type="text/css">
+	.thumbnail {
+		width: 50px;
+		height: 50px;
+		
+	}
+</style>
+
+<div class="row">
+	<div class="col-sm">
+		<h1>List of stamps by year</h1>
+		<a href="?p=list&v=table">View Table</a> | <a href="?p=list&v=icon">View Icons</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm">
+		<table  id="myTable" class="table">
+			<thead>
+				<tr>
+					<th>Imagen</th>
+					<th>Year</th>
+					<th>Stamp name</th>
+					<th>Album</th>
+					<th>Description</th>
+					<th>Width</th>
+					<th>Height</th>
+					<th>Quantity</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($stamps as $stp) {?>
+					<tr>
+						<td><a href="/stamp"><img src="/images/<?= $stp->stamp_img?>" alt="amalia" class="thumbnail"></a></td>
+						<td><?= $stp->year?></td>
+						<td><?= $stp->name?></td>
+						<td><?= $stp->album?></td>
+						<td><?= $stp->description?></td>
+						<td><?= $stp->width?></td>
+						<td><?= $stp->height?></td>
+						<td><?= $stp->quantity?></td>
+						<td>
+							<a href="/stamp?id=<?= $stp->id ?>" style="text-align: center; text-decoration: none;">Details&nbsp; &nbsp; </a>
+							<a href="/reports/delete?id=<?= $stp->id ?>" style="text-align: center; text-decoration: none;">Delete&nbsp; &nbsp; </a>
+							<a href="/reports/increase?id=<?= $stp->id ?>" style="text-align: center; text-decoration: none;">Increase &nbsp; &nbsp; </a>
+							<a href="/editstamp?id=<?= $stp->id ?>" style="text-align: center; text-decoration: none;">Edit</a>
+						</td>
+					</tr>
+				<?php }?>
+				
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#myTable').DataTable();
+	});
+</script>

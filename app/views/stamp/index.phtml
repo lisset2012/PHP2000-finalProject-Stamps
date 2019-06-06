@@ -1,0 +1,36 @@
+
+<div class="row" style="margin-top:50px;">
+	
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="card">
+				<img src="images/<?= $stamp->stamp_img?>"  height="250" width="auto" >
+				<div class="card-body">
+					<h5 class="card-title">Stamp name: <?= $stamp->name?></h5>
+					
+				</div>
+				
+			</div>
+		</div>
+
+        	
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="card">
+				
+				<div class="card-body">
+					<p class="card-title">Album: <?= $stamp->album?></p>
+					<p class="card-title">Year: <?= $stamp->year?></p>
+					<p class="card-title">Description: <?= $stamp->description?></p>
+					<p class="card-title">Width:<?= $stamp->width?> mm</p>
+					<p class="card-title">Height: <?= $stamp->height?> mm</p>
+					<p class="card-title">Quantity: <?= $stamp->quantity?></p>
+				</div>
+
+			</div>
+
+			<div>
+				<a class="btn btn-primary" href="/reports/editstamp?id=<?= $stamp->id ?>" role="button">Edit Stamp</a>
+			</div>
+		</div>
+	
+	
+</div>
